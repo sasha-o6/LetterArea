@@ -1,0 +1,10 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    flex-grow: 1;
+    background: linear-gradient(180deg, rgba(168, 204, 224, 1) 0%, rgba(237, 243, 247, 1) 50%, rgba(174, 207, 226, 1) 100%) no-repeat;
+}

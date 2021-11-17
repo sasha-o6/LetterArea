@@ -1,0 +1,14 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a8cce0), color-stop(50%, #edf3f7), to(#aecfe2)) no-repeat;
+  background: linear-gradient(180deg, #a8cce0 0%, #edf3f7 50%, #aecfe2 100%) no-repeat;
+}
