@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,21 +17,27 @@
 
     <header>
         <div class="container">
-            <div class="col-2 logo">
-                <img src="/img/logo.png" alt="site logo">
-            </div>
-            <div class="col-8">
-                <nav>
-                    <ul>
-                        <li><a href="/about.php">About</a></li>
-                        <li><a href="/postcards/">Postcards</a></li>
-                        <li><a href="/services/">Services</a></li>
-                        <li><a href="/explore/">Explore</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-2">
-                <button class="button">Create an account</button>
+            <div class="row  align-items-center">
+                <div class="col-2 logo">
+                    <a href="/" class="no-line">
+                        <img src="/img/logo.png" alt="site logo">
+                    </a>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-7">
+                    <nav>
+                        <ul class="row">
+                            <li><a href="/about.php">About</a></li>
+                            <li><a href="/postcards/">Postcards</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/explore/">Explore</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-2 text-center mt-auto">
+                    <button id="register-button" class="button">Create an account</button>
+                    <button id="login-button" class="text-center">Log in</button>
+                </div>
             </div>
         </div>
     </header>
