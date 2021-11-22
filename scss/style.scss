@@ -1,10 +1,43 @@
+@import "_vars.scss";
+
+$current-color: #6fb4d1;
+
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    flex-grow: 1;
-    background: linear-gradient(180deg, rgba(168, 204, 224, 1) 0%, rgba(237, 243, 247, 1) 50%, rgba(174, 207, 226, 1) 100%) no-repeat;
+  flex-grow: 1;
+  background: linear-gradient(
+      180deg,
+      rgba(168, 204, 224, 1) 0%,
+      rgba(237, 243, 247, 1) 50%,
+      rgba(174, 207, 226, 1) 100%
+    )
+    no-repeat;
 }
+
+button {
+  outline: none;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.button {
+  border-radius: 30px;
+  background-color: $current-color;
+}
+
+// ----------------------- header -------------------------------
+
+header {
+  .logo {
+  }
+}
+
+// ----------------------- end header -------------------------------

@@ -12,3 +12,17 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#a8cce0), color-stop(50%, #edf3f7), to(#aecfe2)) no-repeat;
   background: linear-gradient(180deg, #a8cce0 0%, #edf3f7 50%, #aecfe2 100%) no-repeat;
 }
+
+button {
+  outline: none;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.button {
+  border-radius: 30px;
+  background-color: #6fb4d1;
+}
