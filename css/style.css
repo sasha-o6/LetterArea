@@ -10,6 +10,15 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#a8cce0), color-stop(50%, #edf3f7), to(#aecfe2)) no-repeat;
   background: linear-gradient(180deg, #a8cce0 0%, #edf3f7 50%, #aecfe2 100%) no-repeat;
   color: #277790;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 65px;
+}
+
+.body_1 {
+  font-size: 20px;
 }
 
 button {
@@ -33,14 +42,57 @@ button:hover, button:focus {
   outline: none;
 }
 
+.under-line {
+  position: relative;
+}
+
+.under-line:not(.no-line):after {
+  content: "";
+  position: absolute;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #277790;
+  height: 1px;
+  width: 0;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  display: block;
+}
+
+.under-line:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #277790;
+}
+
+.under-line:hover::after {
+  width: 100%;
+}
+
 .button {
   border-radius: 30px;
   background-color: #6fb4d1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: #277790;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
 }
 
 ul {
   padding-left: 0;
   list-style-type: none;
+}
+
+.current-page {
+  font-weight: 600;
 }
 
 a {
@@ -81,8 +133,17 @@ a:hover::after {
   margin-bottom: 0;
 }
 
-header nav ul li {
-  margin-right: 100px;
+header #login-button {
+  margin-right: 20px;
+}
+
+header #register-button {
+  white-space: nowrap;
+  padding: 12px 19px;
+}
+
+header #login-button {
+  color: #277790;
 }
 
 .banner.container {
@@ -95,5 +156,27 @@ header nav ul li {
 }
 
 .banner .banner-text img {
-  max-height: 30%;
+  max-height: 100px;
+}
+
+.cards .cart {
+  background-color: #A7CBE0;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.cards .cart p:not(.big-number) {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.cards .big-number {
+  font-size: 150px;
+  color: #54A2C3;
 }

@@ -16,17 +16,17 @@
 <body>
 
     <header>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row  align-items-center">
-                <div class="col-2 logo">
+                <div class="col-lg-2 logo">
                     <a href="/" class="no-line">
                         <img src="/img/logo.png" alt="site logo">
                     </a>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-7">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
                     <nav>
-                        <ul class="row">
+                        <ul class="row justify-content-between">
                             <li><a href="/about.php">About</a></li>
                             <li><a href="/postcards/">Postcards</a></li>
                             <li><a href="/services/">Services</a></li>
@@ -34,9 +34,10 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-2 text-center mt-auto">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3 text-center d-flex">
+                    <button id="login-button" class="text-center"><span class="under-line">Log in</span></button>
                     <button id="register-button" class="button">Create an account</button>
-                    <button id="login-button" class="text-center">Log in</button>
                 </div>
             </div>
         </div>

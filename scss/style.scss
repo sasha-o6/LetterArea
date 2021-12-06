@@ -5,60 +5,7 @@ $text-color: #277790;
 $transition: 0.3s;
 $scale: scale(1.2);
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  background: linear-gradient(
-      180deg,
-      rgba(168, 204, 224, 1) 0%,
-      rgba(237, 243, 247, 1) 50%,
-      rgba(174, 207, 226, 1) 100%
-    )
-    no-repeat;
-  color: $text-color;
-}
-
-button {
-  outline: none;
-  border: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-button {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  overflow-x: hidden;
-
-  &:hover, &:focus{
-    outline: none;
-  }
-}
-
-.button {
-  border-radius: 30px;
-  background-color: $current-color;
-}
-
-ul {
-  padding-left: 0;
-  list-style-type: none;
-}
-
-a {
-  color: $text-color;
-  text-decoration: none;
-  transition: $transition;
-  display: inline-block;
+@mixin under-lig-animation {
   position: relative;
 
   &:not(.no-line):after {
@@ -86,42 +33,154 @@ a {
   }
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+      180deg,
+      rgba(168, 204, 224, 1) 0%,
+      rgba(237, 243, 247, 1) 50%,
+      rgba(174, 207, 226, 1) 100%
+    )
+    no-repeat;
+  color: $text-color;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 65px;
+}
+
+.body_1 {
+  font-size: 20px;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  overflow-x: hidden;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.under-line {
+  @include under-lig-animation();
+}
+
+.button {
+  border-radius: 30px;
+  background-color: $current-color;
+  transition: $transition;
+  display: inline-block;
+
+  &:hover {
+    background-color: $text-color;
+    transition: $transition;
+    color: #fff;
+  }
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.current-page {
+  font-weight: 600;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+  transition: $transition;
+  display: inline-block;
+
+  @include under-lig-animation();
+}
+
 .row {
   margin-bottom: 0;
 }
 
-
-
 // ----------------------- header -------------------------------
 header {
+  #login-button {
+    margin-right: 20px;
+  }
   nav {
     ul {
       li {
-        margin-right: 100px;
+        // margin-right: 100px;
       }
     }
+  }
+  #register-button {
+    white-space: nowrap;
+    padding: 12px 19px;
+  }
+  #login-button {
+    color: $text-color;
   }
   .logo {
   }
 }
+
 // ----------------------- end header -------------------------------
 
 //  ----------------------- home page -----------------------------
 .banner {
-
-  &.container{
+  &.container {
     padding-top: 40px;
     padding-bottom: 120px;
   }
 
   .banner-text {
-    >div{
+    > div {
       margin-top: auto;
     }
 
-    img{
-      max-height: 30%;
+    img {
+      max-height: 100px;
     }
+  }
+}
+
+.cards {
+  .cart {
+    background-color: #A7CBE0;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+
+    p:not(.big-number){
+      font-weight: 700;
+      font-size: 25px;
+    }
+  }
+
+  .big-number {
+    font-size: 150px;
+    color: #54A2C3;
   }
 }
 //  ----------------------- end home page -----------------------------
