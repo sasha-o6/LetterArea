@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Jacques+Francois&display=swap");
 *,
 *::after,
 *::before {
@@ -6,11 +7,19 @@
 }
 
 body {
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   background: -webkit-gradient(linear, left top, left bottom, from(#a8cce0), color-stop(50%, #edf3f7), to(#aecfe2)) no-repeat;
   background: linear-gradient(180deg, #a8cce0 0%, #edf3f7 50%, #aecfe2 100%) no-repeat;
   color: #277790;
   font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 h1 {
@@ -30,7 +39,19 @@ img {
   max-width: 100%;
 }
 
-button {
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  overflow-x: hidden;
+}
+
+input:hover, input:focus {
+  outline: none;
+}
+
+button,
+input[type="reset"] {
   background-color: transparent;
   outline: none;
   border: none;
@@ -38,7 +59,9 @@ button {
   overflow-x: hidden;
 }
 
-button:hover, button:focus {
+button:hover, button:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus {
   outline: none;
 }
 
@@ -77,6 +100,8 @@ button:hover, button:focus {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   display: inline-block;
+  cursor: pointer;
+  padding: 12px 19px;
 }
 
 .button:hover {
@@ -84,6 +109,7 @@ button:hover, button:focus {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: #fff;
+  text-decoration: none;
 }
 
 ul {
@@ -101,10 +127,13 @@ a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   display: inline-block;
+}
+
+a:not(.button) {
   position: relative;
 }
 
-a:not(.no-line):after {
+a:not(.button):not(.no-line):after {
   content: "";
   position: absolute;
   -webkit-transition: 0.3s;
@@ -118,14 +147,14 @@ a:not(.no-line):after {
   display: block;
 }
 
-a:hover {
+a:not(.button):hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   text-decoration: none;
   color: #277790;
 }
 
-a:hover::after {
+a:not(.button):hover::after {
   width: 100%;
 }
 
@@ -146,6 +175,63 @@ header #login-button {
   color: #277790;
 }
 
+footer {
+  font-family: "Jacques Francois", serif;
+  padding-top: 58px;
+  padding-bottom: 50px;
+  background-color: #90b9d0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+footer img {
+  max-width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+
+footer blockquote {
+  font-size: 26px;
+  text-align: center;
+  color: #277790;
+}
+
+footer blockquote span {
+  display: block;
+}
+
+footer a:not(.button):not(.no-line):not(.mail-link) {
+  display: inline;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+footer a:not(.button):not(.no-line):not(.mail-link)::after {
+  height: 2px;
+}
+
+footer .navigation-block {
+  margin-top: 67px;
+}
+
+footer .navigation-block .row {
+  margin-bottom: 20px;
+}
+
+footer .mail-link {
+  display: block;
+  text-align: center;
+  color: #e3f2f9;
+  margin-top: 30px;
+  font-size: 19px;
+  text-decoration: underline;
+}
+
+footer .mail-link:hover {
+  text-decoration: underline;
+}
+
 .banner.container {
   padding-top: 40px;
   padding-bottom: 120px;
@@ -160,7 +246,7 @@ header #login-button {
 }
 
 .cards .cart {
-  background-color: #A7CBE0;
+  background-color: #a7cbe0;
   border-radius: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -169,6 +255,7 @@ header #login-button {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 50px;
+  position: relative;
 }
 
 .cards .cart p:not(.big-number) {
@@ -176,7 +263,48 @@ header #login-button {
   font-size: 25px;
 }
 
+.cards .cart.cart-big {
+  padding: 20px;
+}
+
+.cards .cart.cart-big p {
+  margin-top: 30px;
+}
+
+.cards .cart.cart-big .big-number {
+  margin-top: -50px;
+}
+
+.cards .cart.cart-big .position-relative {
+  z-index: 1;
+}
+
+.cards .cart .position-absolute {
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: auto;
+}
+
 .cards .big-number {
   font-size: 150px;
-  color: #54A2C3;
+  color: #54a2c3;
+  font-weight: 600;
+}
+
+.register, .login {
+  padding-top: 70px;
+  padding-bottom: 140px;
+}
+
+.register h2, .login h2 {
+  margin-bottom: 20px;
+}
+
+.register .button, .login .button {
+  padding: 10px 25px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }

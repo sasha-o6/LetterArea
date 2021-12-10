@@ -1,5 +1,7 @@
 @import "_vars.scss";
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Jacques+Francois&display=swap");
+
 $current-color: #6fb4d1;
 $text-color: #277790;
 $transition: 0.3s;
@@ -40,6 +42,7 @@ $scale: scale(1.2);
 }
 
 body {
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   background: linear-gradient(
       180deg,
@@ -50,6 +53,8 @@ body {
     no-repeat;
   color: $text-color;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -69,7 +74,20 @@ img {
   max-width: 100%;
 }
 
-button {
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  overflow-x: hidden;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+button,
+input[type="reset"] {
   background-color: transparent;
   outline: none;
   border: none;
@@ -91,11 +109,14 @@ button {
   background-color: $current-color;
   transition: $transition;
   display: inline-block;
+  cursor: pointer;
+  padding: 12px 19px;
 
   &:hover {
     background-color: $text-color;
     transition: $transition;
     color: #fff;
+    text-decoration: none;
   }
 }
 
@@ -114,7 +135,9 @@ a {
   transition: $transition;
   display: inline-block;
 
-  @include under-lig-animation();
+  &:not(.button) {
+    @include under-lig-animation();
+  }
 }
 
 .row {
@@ -146,6 +169,62 @@ header {
 
 // ----------------------- end header -------------------------------
 
+// ----------------------- footer -------------------------------
+footer {
+  font-family: "Jacques Francois", serif;
+  padding-top: 58px;
+  padding-bottom: 50px;
+  background-color: #90b9d0;
+  flex-grow: 1;
+
+  img {
+    max-width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  blockquote {
+    font-size: 26px;
+    text-align: center;
+    color: $text-color;
+
+    span {
+      display: block;
+    }
+  }
+
+  a:not(.button):not(.no-line):not(.mail-link) {
+    display: inline;
+    font-weight: 700;
+    font-size: 25px;
+
+    &::after {
+      height: 2px;
+    }
+  }
+
+  .navigation-block {
+    margin-top: 67px;
+    .row {
+      margin-bottom: 20px;
+    }
+  }
+
+  .mail-link {
+    display: block;
+    text-align: center;
+    color: #e3f2f9;
+    margin-top: 30px;
+    font-size: 19px;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+// ----------------------- end footer -------------------------------
+
 //  ----------------------- home page -----------------------------
 .banner {
   &.container {
@@ -166,21 +245,62 @@ header {
 
 .cards {
   .cart {
-    background-color: #A7CBE0;
+    background-color: #a7cbe0;
     border-radius: 25px;
     display: flex;
     align-items: center;
     margin-bottom: 50px;
+    position: relative;
 
-    p:not(.big-number){
+    p:not(.big-number) {
       font-weight: 700;
       font-size: 25px;
+    }
+
+    &.cart-big {
+      padding: 20px;
+      p {
+        margin-top: 30px;
+      }
+      .big-number {
+        margin-top: -50px;
+      }
+      .position-relative {
+        z-index: 1;
+      }
+    }
+
+    .position-absolute {
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      // z-index: -1;
+      display: block;
+      margin: auto;
     }
   }
 
   .big-number {
     font-size: 150px;
-    color: #54A2C3;
+    color: #54a2c3;
+    font-weight: 600;
   }
 }
 //  ----------------------- end home page -----------------------------
+
+
+.register, .login{
+  padding-top: 70px;
+  padding-bottom: 140px;
+
+  h2{
+    margin-bottom: 20px;
+  }
+
+  .button{
+    padding: 10px 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}

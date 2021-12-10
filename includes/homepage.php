@@ -26,20 +26,20 @@
                         Write a letter
                         Send a postcard
                         And get the answer</p>
-                    <img class="col-lg-4" src="<?= get_url(""); ?>/img/girl-with-male.png" alt="girl with male">
+                    <img class="col-lg-4" src="<?= get_url("img/girl-with-male.png"); ?>" alt="girl with male">
                 </div>
                 <div class="cart">
                     <p class="big-number col-lg-2">2</p>
                     <p class="col-lg-5">Get an answer and register the letter</p>
-                    <img class="col-lg-5" src="<?= get_url(""); ?>/img/man.png" alt="girl with male">
+                    <img class="col-lg-5" src="<?= get_url("img/man.png"); ?>" alt="girl with male">
                 </div>
             </div>
-            <div class="col-lg-6 align-items-center cart ">
-                <div class="row">
-                    <p class="big-number">3</p>
-                    <p class="col-lg-5">Get an answer and register the letter</p>
+            <div class="col-lg-6 align-items-start cart cart-big">
+                <div class="d-flex position-relative">
+                    <p class="big-number col-lg-3">3</p>
+                    <p class="col-lg-8">Get an answer and register the letter</p>
                 </div>
-                <img class="" src="<?= get_url(""); ?>/img/girl-with-mail-1.png" alt="girl with male">
+                <img class="position-absolute" src="<?= get_url("img/girl-with-mail-1.png"); ?>" alt="girl with male">
             </div>
         </div>
     </div>
