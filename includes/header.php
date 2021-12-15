@@ -30,9 +30,9 @@ include_once "includes/functions.php";
                     <nav>
                         <ul class="row justify-content-between">
                             <li><a href="<?= get_url("about.php"); ?>">About</a></li>
-                            <li><a href="<?= get_url("postcards"); ?>">Postcards</a></li>
-                            <li><a href="<?= get_url("services"); ?>">Services</a></li>
-                            <li><a href="<?= get_url("explore"); ?>">Explore</a></li>
+                            <li><a href="<?= get_url("postcards.php"); ?>">Postcards</a></li>
+                            <li><a href="<?= get_url("services.php"); ?>">Services</a></li>
+                            <li><a href="<?= get_url("explore.php"); ?>">Explore</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -41,12 +41,12 @@ include_once "includes/functions.php";
                     <!-- <button id="login-button" class="text-center"><span class="under-line">Log in</span></button> -->
                     <!-- <button id="register-button" class="button">Create an account</button> -->
                     <?php //session_start();
-                    //if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) { ?>
-                        <!-- <a href="<?= get_url("account.php"); ?>" class="button ml-auto" id="register-button">Account</a> -->
-                    <?php //} else { ?>
+                    if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) { ?>
+                        <a href="<?= get_url("account.php"); ?>" class="button ml-auto" id="register-button">Account</a>
+                    <?php } else { ?>
                         <a id="login-button" href="<?= get_url("login.php"); ?>">Log in</a>
                         <a href="<?= get_url("register.php"); ?>" class="button" id="register-button">Create an account</a>
-                    <?php //} ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
