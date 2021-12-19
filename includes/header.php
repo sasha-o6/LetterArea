@@ -1,6 +1,7 @@
-<?php
-include_once "includes/functions.php";
-?>
+<?php include_once "includes/functions.php";
+
+// Initialize the session
+session_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,9 +39,7 @@ include_once "includes/functions.php";
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-3 text-center d-flex align-items-center">
-                    <!-- <button id="login-button" class="text-center"><span class="under-line">Log in</span></button> -->
-                    <!-- <button id="register-button" class="button">Create an account</button> -->
-                    <?php //session_start();
+                    <?php
                     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) { ?>
                         <a href="<?= get_url("account.php"); ?>" class="button ml-auto" id="register-button">Account</a>
                     <?php } else { ?>

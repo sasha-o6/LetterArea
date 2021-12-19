@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close connection
     mysqli_close($link);
 }
-
+error_reporting(E_ERROR | E_PARSE);
 
 include_once "includes/header.php";
 

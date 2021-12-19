@@ -155,9 +155,44 @@ include_once "includes/header.php";
         </div>
         <div class="form-group">
             <label>Country</label>
-            <input type="text" name="country" class="form-control <?php echo (!empty($country_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $country; ?>">
+            <select name="country" id="pet-select" class="form-control <?php echo (!empty($country_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $country; ?>">
+                <option value="">--Please choose an option--</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="Poland">Poland</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Moldova">Moldova</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Romania">Romania</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Austria">Austria</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Germany">Germany</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Italy">Italy</option>
+                <option value="France">France</option>
+                <option value="Spain">Spain</option>
+                <option value="Portugal">Portugal</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Norway">Norway</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Greece">Greece</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Czech Republic">Czech Republic</option>
+                <option value="Israel">Israel</option>
+            </select>
+            <!-- <input type="text" name="country" class="form-control <?php echo (!empty($country_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $country; ?>"> -->
             <span class="invalid-feedback"><?php echo $country_err; ?></span>
         </div>
+
         <div class="form-group">
             <input type="submit" class="button" value="Submit">
             <input type="reset" class="ml-3" value="Reset">
