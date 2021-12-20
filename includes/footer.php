@@ -1,22 +1,12 @@
-<!-- <section class="register-popup">
-    <form action="">
-
-    </form>
-</section> -->
-<?php //include_once "login.php"; 
-?>
-
-<?php //include_once "register.php"; 
-?>
-
-
 </main>
 
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <img src="<?= get_url("img/footer-logo.png"); ?>" alt="">
+                <a href="/">
+                    <img src="<?= get_url("img/footer-logo.png"); ?>" alt="">
+                </a>
                 <blockquote>
                     “Kind words can be short and easy to speak, but their echoes are truly endless.”
                     <span>Mother Teresa</span>
@@ -28,19 +18,19 @@
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5">
-                        <a href="<?= get_url("about"); ?>">About</a>
+                        <a href="<?= get_url("about.php"); ?>">About</a>
                     </div>
                     <div class="col-lg-5">
-                        <a href="<?= get_url("postcards"); ?>">Postcards</a>
+                        <a href="<?= get_url("postcards.php"); ?>">Postcards</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5">
-                        <a href="<?= get_url("services"); ?>">Services</a>
+                        <a href="<?= get_url("services.php"); ?>">Services</a>
                     </div>
                     <div class="col-lg-5">
-                        <a href="<?= get_url("explore"); ?>">Explore</a>
+                        <a href="<?= get_url("explore.php"); ?>">Explore</a>
                     </div>
                 </div>
             </div>

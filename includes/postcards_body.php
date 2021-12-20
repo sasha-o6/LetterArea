@@ -2,6 +2,7 @@
 include_once "includes/config.php";
 $confirm_user = false;
 $user_id_err = $user_name_err = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["user_name"]) && isset($_POST["user_id"])) {
         $sql = "SELECT * FROM users";
@@ -26,8 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
 if ($_SESSION["loggedin"] == true) { ?>
     <div class="container my-5">
+        <?php if ($confirm_user == true) { ?>
+            <div class="alert alert-success">
+                <h3 class="mb-0">successfully sent</h3>
+            </div>
+        <?php } ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label for="">User nickname</label>
@@ -37,14 +44,13 @@ if ($_SESSION["loggedin"] == true) { ?>
 
             <div class="form-group">
                 <label for="">User id</label>
-                <input type="number" name="user_id" class="form-control <?php echo (!empty($user_id_err)) ? 'is-invalid' : ''; ?>" value="<?php echo isset($param_to_user) ? $param_to_user : ""; ?>">
+                <input type="number" min="0" name="user_id" class="form-control <?php echo (!empty($user_id_err)) ? 'is-invalid' : ''; ?>" value="<?php echo isset($param_to_user) ? $param_to_user : ""; ?>">
                 <span class="invalid-feedback"><?php echo $user_id_err; ?></span>
             </div>
 
             <div class="form-group">
                 <label for="">Your letter</label>
                 <textarea class="form-control" name="letter"><?php echo isset($param_letter) ? $param_letter : ""; ?></textarea>
-                <!-- <input type="number" name="" class="form-control"> -->
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
 

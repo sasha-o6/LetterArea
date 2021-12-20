@@ -25,12 +25,13 @@ $user_received = mysqli_num_rows($user_info_received);
 include_once "includes/header.php";
 ?>
 <div class="container text-center pb-5">
-    <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site. From <?php echo htmlspecialchars($_SESSION["country"]); ?></h1>
+    <h1 class="mt-5 mb-4">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site. </h1>
+    <h1 class="mb-5 mt-4">From <?php echo htmlspecialchars($_SESSION["country"]); ?></h1>
     <div class="row justify-content-center">
         <div class="col-lg-3">
             <a href="<?= get_url("change-password.php"); ?>" class="button">Change Password</a>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 d-flex align-items-center">
             <a href="<?= get_url("logout.php"); ?>" class="ml-4">Sign Out</a>
         </div>
     </div>
