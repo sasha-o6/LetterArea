@@ -44,7 +44,7 @@ function get_url($page = '')
 //     JOIN `users` ON users.id = posts.user_id;");
 // }
 
-function get_users()
-{
-    return db_query("SELECT * FROM users");
-}
+// function get_users()
+// {
+//     return db_query("SELECT * FROM users");
+// }

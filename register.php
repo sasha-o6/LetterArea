@@ -11,8 +11,8 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 require_once "includes/config.php";
 
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = $country = "";
-$username_err = $password_err = $confirm_password_err = $country_err =  "";
+$username = $password = $confirm_password = $country = $zipcode = "";
+$username_err = $password_err = $confirm_password_err = $country_err = $zipcode_err =  "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Validate username
+    // Validate country
     if (empty(trim($_POST["country"]))) {
         $country_err = "Please choose a country.";
     } else {
@@ -71,6 +71,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 /* store result */
                 mysqli_stmt_store_result($stmt);
                 $country = trim($_POST["country"]);
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+
+    // Validate country
+    if (empty(trim($_POST["zipcode"]))) {
+        $country_err = "Please choose a country.";
+    } else {
+        // Prepare a select statement
+        $sql = "SELECT id FROM users WHERE zipcode = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_zipcode);
+
+            // Set parameters
+            $param_zipcode = trim($_POST["zipcode"]);
+
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+                $zipcode = trim($_POST["zipcode"]);
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -103,11 +131,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password, country) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO users (username, password, country, zipcode) VALUES (?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_country);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_password, $param_country, $param_zipcode);
 
             // Set parameters
             $param_username = $username;
@@ -191,6 +219,12 @@ include_once "includes/header.php";
             </select>
             <!-- <input type="text" name="country" class="form-control <?php echo (!empty($country_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $country; ?>"> -->
             <span class="invalid-feedback"><?php echo $country_err; ?></span>
+        </div>
+
+        <div class="form-group">
+            <label>Zip code of the mail where you will pick up the letter</label>
+            <input type="text" name="zipcode" class="form-control <?php echo (!empty($zipcode_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $zipcode; ?>">
+            <span class="invalid-feedback"><?php echo $zipcode; ?></span>
         </div>
 
         <div class="form-group">

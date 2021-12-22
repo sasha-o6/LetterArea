@@ -1,7 +1,15 @@
-let blockHieght;
-// document.querySelector("#skip-block").addEventListener("clikc", () => {
-//     blockHieght = document.querySelector('.banner').offsetHeight;
+if (querySelector("#agreeButton")) {
+    document.querySelector("#agreeButton").addEventListener("click", (e) => {
+        if (e.target.parentNode.parentNode.querySelector("input[name='i_agree']").checked != true) {
+            e.preventDefault();
+        }
+    })
+}
 
-//     document.body.scrollTop = document.body.scrollTop + blockHieght;
-//     document.documentElement.scrollTop = document.documentElement.scrollTop + blockHieght;
-// });
+if (document.querySelector("#anotherOne")) {
+    document.querySelector("#anotherOne").addEventListener("click", (e) => {
+        if (e.target.parentNode.parentNode.querySelector("input[name='i_agree']").checked == true) {
+            e.preventDefault();
+        }
+    })
+}

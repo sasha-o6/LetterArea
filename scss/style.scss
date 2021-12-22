@@ -163,8 +163,42 @@ header {
   #login-button {
     color: $text-color;
   }
-  .logo {
+
+  .dropdown {
+    position: relative;
+    padding: 0 30px;
+
+    & > a:hover + ul, ul:hover {
+      opacity: 1;
+      pointer-events: fill;
+      transition: $transition;
+      transform: translateY(90%);
+    }
+
+    ul {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: block;
+      margin: auto;
+      transform: translateY(50%);
+      opacity: 0;
+      pointer-events: none;
+      transition: $transition;
+      padding: 10px 30px;
+      z-index: 999;
+
+      li{
+        margin: 10px 0;
+      }
+    }
   }
+}
+
+input[type=submit]{
+  cursor: pointer;
 }
 
 // ----------------------- end header -------------------------------
@@ -289,15 +323,16 @@ footer {
 }
 //  ----------------------- end home page -----------------------------
 
-.register, .login{
+.register,
+.login {
   padding-top: 70px;
   padding-bottom: 140px;
 
-  h2{
+  h2 {
     margin-bottom: 20px;
   }
 
-  .button{
+  .button {
     padding: 10px 25px;
     margin-top: 20px;
     margin-bottom: 30px;

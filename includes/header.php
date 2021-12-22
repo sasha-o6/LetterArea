@@ -1,10 +1,11 @@
 <?php include_once "includes/functions.php";
 
 // Initialize the session
-session_start();?>
+session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,9 +32,14 @@ session_start();?>
                     <nav>
                         <ul class="row justify-content-between">
                             <li><a href="<?= get_url("about.php"); ?>">About</a></li>
-                            <li><a href="<?= get_url("postcards.php"); ?>">Postcards</a></li>
-                            <li><a href="<?= get_url("services.php"); ?>">Services</a></li>
-                            <li><a href="<?= get_url("explore.php"); ?>">Explore</a></li>
+                            <li class="dropdown"><a href="javascript:;">Services</a>
+                                <ul>
+                                    <li><a href="<?= get_url("services.php/?action=postcard"); ?>">Postcard</a></li>
+                                    <li><a href="<?= get_url("services.php/?action=email"); ?>">Email</a></li>
+                                    <li><a href="<?= get_url("services.php/?action=santa"); ?>">Santa</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="<?= get_url("my-lists.php"); ?>">Incoming letters</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -41,6 +47,7 @@ session_start();?>
                 <div class="col-lg-3 text-center d-flex align-items-center">
                     <?php
                     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) { ?>
+                        <a href="<?= get_url("my-lists.php"); ?>" class="mr-1 ml-auto">My Letters</a>
                         <a href="<?= get_url("account.php"); ?>" class="button ml-auto" id="register-button">Account</a>
                     <?php } else { ?>
                         <a id="login-button" href="<?= get_url("login.php"); ?>">Log in</a>
