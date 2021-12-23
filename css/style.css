@@ -180,7 +180,8 @@ header .dropdown {
   padding: 0 30px;
 }
 
-header .dropdown > a:hover + ul, header .dropdown ul:hover {
+header .dropdown > a:hover + ul,
+header .dropdown ul:hover {
   opacity: 1;
   pointer-events: fill;
   -webkit-transition: 0.3s;
@@ -211,7 +212,7 @@ header .dropdown ul li {
   margin: 10px 0;
 }
 
-input[type=submit] {
+input[type="submit"] {
   cursor: pointer;
 }
 
@@ -350,4 +351,42 @@ footer .mail-link:hover {
   padding: 10px 25px;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.margin-card {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.about-page {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.about-page .about-image {
+  max-width: 50%;
+  margin-top: 40px;
+}
+
+.about-page .first-row-about {
+  margin-top: 100px;
+}
+
+.about-page .number {
+  margin-right: 13px;
+  background-color: #A7CBE0;
+  color: #54A2C3;
+  height: 54px;
+  width: 56px;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: -12px;
 }

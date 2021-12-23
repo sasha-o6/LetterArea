@@ -32,7 +32,8 @@ session_start(); ?>
                     <nav>
                         <ul class="row justify-content-between">
                             <li><a href="<?= get_url("about.php"); ?>">About</a></li>
-                            <li class="dropdown"><a href="javascript:;">Services</a>
+                            <li class="dropdown">
+                                <a href="javascript:;">Services</a>
                                 <ul>
                                     <li><a href="<?= get_url("services.php/?action=postcard"); ?>">Postcard</a></li>
                                     <li><a href="<?= get_url("services.php/?action=email"); ?>">Email</a></li>
@@ -47,7 +48,16 @@ session_start(); ?>
                 <div class="col-lg-3 text-center d-flex align-items-center">
                     <?php
                     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) { ?>
-                        <a href="<?= get_url("my-lists.php"); ?>" class="mr-1 ml-auto">My Letters</a>
+                        <div class="dropdown">
+                            <a href="javascript:;" class="mr-1 ml-auto">My Letters</a>
+                            <ul>
+                                <li><a href="<?= get_url("my-lists.php/?action=postcard"); ?>">Postcard</a></li>
+                                <li><a href="<?= get_url("my-lists.php/?action=email"); ?>">Email</a></li>
+                                <li><a href="<?= get_url("my-lists.php/?action=santa"); ?>">Santa</a></li>
+                            </ul>
+                        </div>
+
+
                         <a href="<?= get_url("account.php"); ?>" class="button ml-auto" id="register-button">Account</a>
                     <?php } else { ?>
                         <a id="login-button" href="<?= get_url("login.php"); ?>">Log in</a>

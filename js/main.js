@@ -1,4 +1,4 @@
-if (querySelector("#agreeButton")) {
+if (document.querySelector("#agreeButton")) {
     document.querySelector("#agreeButton").addEventListener("click", (e) => {
         if (e.target.parentNode.parentNode.querySelector("input[name='i_agree']").checked != true) {
             e.preventDefault();

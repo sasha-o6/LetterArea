@@ -3,12 +3,13 @@ include_once "includes/config.php";
 $confirm_user = false;
 $user_id_err = $user_name_err = "";
 $aciton = $_GET["action"];
+$user_current_id = $_SESSION["id"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($aciton == "email") {
         if (isset($_POST["user_name"]) && isset($_POST["user_id"])) {
-            $sql = "SELECT * FROM users";
-            $users = $link->query($sql);
+            // $sql = "SELECT * FROM users";
+            // $users = $link->query($sql);
 
             $param_user_id = $_SESSION["id"];
             $param_username = trim($_POST["user_name"]);
@@ -16,13 +17,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_letter = trim($_POST["letter"]);
 
 
-            foreach ($users as $user) {
-                if ($user["username"] == $param_username && $user["id"] == $param_to_user && $param_user_id != $param_to_user) {
-                    $sql = "INSERT INTO `send-mail` (`id`,`user_id`, `send_to`, `letter_text`) VALUES (NULL,'$param_user_id', '$param_to_user', '$param_letter')";
-                    $link->query($sql);
-                    $confirm_user = true;
-                }
+            if ($user_current_id != $param_to_user) {
+                $sql = "INSERT INTO `send-mail` (`id`,`user_id`, `send_to`, `letter_text`) VALUES (NULL,'$param_user_id', '$param_to_user', '$param_letter')";
+                $link->query($sql);
+                $confirm_user = true;
             }
+            // foreach ($users as $user) {
+            //     if ($user["username"] == $param_username && $user["id"] == $param_to_user && $param_user_id != $param_to_user && $confirm_user != true) {
+
+            //     }
+            // }
 
             if ($confirm_user != true) {
                 $user_id_err = $user_name_err = "This user not found!";
